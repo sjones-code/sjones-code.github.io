@@ -1,182 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Stephen Jones — Robotics & Embedded Systems Engineer, Georgia Tech BSME + MSCS (Computational Perception & Robotics). Atlanta, GA.">
-  <title>Stephen Jones</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stephen Jones | Mechanical & Robotics Engineer</title>
+  <meta name="description" content="Portfolio of Stephen Jones – Georgia Tech BSME graduate & OMSCS CPR student specializing in robotics, mechatronics, and embedded systems." />
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ── HEADER ──────────────────────────────────────────── -->
-  <header>
-    <div class="wrap">
-      <div class="header-inner">
-
-        <!-- Profile photo: replace src with your actual photo path -->
-        <div class="photo-placeholder" title="Profile photo placeholder — replace with your photo">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          </svg>
-        </div>
-
-        <div class="header-text">
-          <h1>Stephen Jones</h1>
-          <p class="location">Atlanta, GA</p>
-          <p class="degrees">
-            <strong>B.S. Mechanical Engineering</strong>, Georgia Tech, 2026<br>
-            <strong>M.S. Computer Science</strong> (Computational Perception &amp; Robotics), Georgia Tech OMSCS, in progress
+  <div class="layout-wrapper">
+    <!-- Header / Bio Section -->
+    <header class="profile-header">
+      <div class="profile-top">
+        <div class="profile-intro">
+          <h1 class="name">Stephen Jones</h1>
+          <p class="headline">Robotics & Mechatronics Engineer</p>
+          <p class="sub-headline">Georgia Tech BSME '26 &bull; MSCS Candidate (Computational Perception & Robotics)</p>
+          <p class="location-tag">
+            <span class="status-indicator"></span> Atlanta, GA &bull; Open to SF Relocation
           </p>
         </div>
-
-      </div>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- ── THINGS I'M PROUD OF ─────────────────────────── -->
-    <section id="proud">
-      <div class="wrap">
-        <h2>Things I'm proud of</h2>
-        <ul class="proud-list">
-          <li>Division I swimmer at Georgia Tech — elected Team Captain, 2024–25 season</li>
-          <li>Built a wireless robotic gripper actuated by shape memory alloy wire, controlled from a phone browser via firmware I wrote on an ESP32</li>
-          <li>1st place out of five teams in a fully autonomous robot competition — designed, fabricated, and programmed end to end</li>
-          <li>Deep learning classifier for structural defect detection: 99.83% accuracy, 1.00 precision/recall across all categories</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ── THE JOURNEY ─────────────────────────────────── -->
-    <section id="journey">
-      <div class="wrap">
-        <h2>The journey</h2>
-        <div class="timeline">
-
-          <div class="tl-item">
-            <div class="tl-dot" aria-hidden="true"></div>
-            <div class="tl-content">
-              <div class="role">Lead Mechatronics Engineer</div>
-              <div class="org">Khanjur R&amp;D — Senior Capstone</div>
-              <div class="dates">Jan 2026 – May 2026</div>
-            </div>
-          </div>
-
-          <div class="tl-item">
-            <div class="tl-dot" aria-hidden="true"></div>
-            <div class="tl-content">
-              <div class="role">Research Assistant</div>
-              <div class="org">Better Place Drones – XPrize Team</div>
-              <div class="dates">Aug 2024 – Dec 2024</div>
-            </div>
-          </div>
-
-          <div class="tl-item">
-            <div class="tl-dot" aria-hidden="true"></div>
-            <div class="tl-content">
-              <div class="role">Fire Protection Engineer Intern</div>
-              <div class="org">Jensen-Hughes</div>
-              <div class="dates">May 2025 – Jul 2025</div>
-            </div>
-          </div>
-
-          <div class="tl-item">
-            <div class="tl-dot" aria-hidden="true"></div>
-            <div class="tl-content">
-              <div class="role">B.S. Mechanical Engineering → M.S. Computer Science (in progress)</div>
-              <div class="org">Georgia Institute of Technology</div>
-              <div class="dates">Aug 2022 – present</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── PROJECTS ────────────────────────────────────── -->
-    <section id="projects">
-      <div class="wrap">
-        <h2>Projects</h2>
-        <div class="projects">
-
-          <div class="project">
-            <!-- Replace the div below with <img src="your-image.jpg" alt="Nitinol robotic gripper"> inside .project-img when you have a photo -->
-            <div class="project-img" role="img" aria-label="Nitinol robotic gripper — image placeholder">
-              Add a photo of the gripper here
-            </div>
-            <div>
-              <div class="project-title">Wireless Nitinol Robotic Gripper</div>
-              <div class="project-stack">ESP32 · C++ · PWM/MOSFET circuits · SolidWorks</div>
-              <p class="project-desc">Shape memory alloy wire replaces conventional motors: electrically heated Nitinol contracts and closes the gripper. An ESP32 hosts a local Wi-Fi web server so a phone browser can control it — no app, no internet required. Multiple hardware revisions before reliable, repeatable actuation.</p>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-img" role="img" aria-label="Deep learning structural inspection — image placeholder">
-              Add a results image or confusion matrix here
-            </div>
-            <div>
-              <div class="project-title">Deep Learning for Structural Inspection</div>
-              <div class="project-stack">Python · TensorFlow · VGG16 · PCA · K-Means</div>
-              <p class="project-desc">Transfer learning pipeline using a pre-trained VGG16 CNN to classify concrete defects. 99.83% accuracy on 2,000 images. PCA reduced input dimensionality by 80%; K-Means clustering sub-classified crack morphology with 1.00 precision/recall across all categories.</p>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-img" role="img" aria-label="ABS braking simulation — image placeholder">
-              Add a plot of wheel slip vs. time here
-            </div>
-            <div>
-              <div class="project-title">ABS Braking Simulation</div>
-              <div class="project-stack">MATLAB · Control Theory · Non-linear Dynamics</div>
-              <p class="project-desc">Non-linear quarter-car model with bang-bang feedback control optimizing wheel slip across dry, wet, and icy surfaces from 100 km/h. Validated stopping distance of 14.6m on dry pavement.</p>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-img" role="img" aria-label="Autonomous competition robot — image placeholder">
-              Add a photo of the robot here
-            </div>
-            <div>
-              <div class="project-title">Autonomous Competition Robot</div>
-              <div class="project-stack">SolidWorks · C++ · Arduino · FMEA · QFD</div>
-              <p class="project-desc">1st place out of five teams. Designed, fabricated, and programmed end to end across a three-person team — 30+ weekly hours of CAD, firmware, and physical fabrication alongside a full engineering course load.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── CONTACT ─────────────────────────────────────── -->
-    <section id="contact">
-      <div class="wrap">
-        <h2>Get in touch</h2>
         <div class="contact-links">
-          <a href="https://github.com/sjones-code" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/sjones396" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:stephen04317@gmail.com">stephen04317@gmail.com</a>
+          <a href="mailto:stephen04317@gmail.com" class="btn btn-secondary">Email</a>
+          <a href="https://github.com/sjones-code" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
+          <a href="https://linkedin.com/in/sjones396" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+          <a href="Stephen Fall 26' Resume.pdf" target="_blank" class="btn btn-primary">Resume (PDF)</a>
+        </div>
+      </div>
+
+      <div class="profile-summary">
+        <p>
+          Mechanical engineer focused on real-world autonomous hardware, embedded firmware, and the intersection where physical systems meet intelligent control. Former Division I varsity swim team captain at Georgia Tech with a strong background in rapid iteration, custom mechatronics, and hands-on fabrication.
+        </p>
+      </div>
+
+      <!-- Quick Highlights Bar -->
+      <div class="quick-stats-grid">
+        <div class="stat-card">
+          <span class="stat-label">Core Strengths</span>
+          <span class="stat-value">Mechatronics, Prototyping, C++, ESP32</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Specialization</span>
+          <span class="stat-value">GT OMSCS CPR (AI4R, Computer Vision)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Discipline</span>
+          <span class="stat-value">D1 Team Captain (20+ hrs/wk training)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Projects Tabbed Section -->
+    <section class="projects-section" id="projects">
+      <div class="section-header-row">
+        <h2 class="section-title">Selected Engineering Projects</h2>
+        <span class="section-subtitle">Select a project to review technical specs and architecture</span>
+      </div>
+
+      <!-- Tab Navigation Controls -->
+      <div class="tabs-nav" role="tablist" aria-label="Project tabs">
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-khanjur" id="tab-khanjur" onclick="switchTab('khanjur')">
+          <span class="tab-index">01</span>
+          <span class="tab-name">Khanjur Gripper</span>
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-rover" id="tab-rover" onclick="switchTab('rover')">
+          <span class="tab-index">02</span>
+          <span class="tab-name">Security Buggy Design</span>
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-drones" id="tab-drones" onclick="switchTab('drones')">
+          <span class="tab-index">03</span>
+          <span class="tab-name">XPrize Drone Payload</span>
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-vision" id="tab-vision" onclick="switchTab('vision')">
+          <span class="tab-index">04</span>
+          <span class="tab-name">Vision Inspection</span>
+        </button>
+      </div>
+
+      <!-- Tab Panels Container -->
+      <div class="tab-content-container">
+
+        <!-- PROJECT 1: KHANJUR GRIPPER -->
+        <article class="project-panel active" role="tabpanel" id="panel-khanjur" aria-labelledby="tab-khanjur">
+          <div class="project-header">
+            <div>
+              <span class="badge">Mechatronics & Embedded Systems</span>
+              <h3 class="project-title">Nitinol-Actuated Wireless Robotic Gripper</h3>
+              <p class="project-role-tag">Lead Mechatronics Engineer &bull; Jan 2026 – May 2026</p>
+            </div>
+            <div class="tech-pills">
+              <span>ESP32</span>
+              <span>Embedded C++</span>
+              <span>PWM MOSFETs</span>
+              <span>Shape Memory Alloys</span>
+              <span>SolidWorks</span>
+            </div>
+          </div>
+
+          <div class="project-body-grid">
+            <div class="project-text">
+              <div class="detail-block">
+                <h4>The Engineering Challenge</h4>
+                <p>
+                  Conventional robotic end-effectors rely on bulky DC servomotors and gearboxes that add significant inertial mass to high-speed robotic arms. The objective was to design a noiseless, high power-to-weight ratio end-effector capable of reliable actuation without electric motors.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <h4>Architecture & Design Execution</h4>
+                <ul>
+                  <li><strong>Actuation Mechanism:</strong> Integrated Shape Memory Alloy (Nitinol) wires engineered to contract upon resistive Joule heating, replacing traditional motorized drivetrains.</li>
+                  <li><strong>Power Regulation:</strong> Designed and tuned PWM-driven MOSFET switching circuits to meter current dynamically, preventing thermal degradation and wire fatigue while maximizing clamp response.</li>
+                  <li><strong>Firmware & UI:</strong> Developed embedded C++ on an ESP32 microcontroller hosting an asynchronous web server for real-time, low-latency smartphone teleoperation.</li>
+                  <li><strong>Mechanical Iterations:</strong> Modeled in SolidWorks with multiple 3D-printed rapid prototyping iterations to optimize mechanical leverage and heat dissipation.</li>
+                </ul>
+              </div>
+
+              <div class="detail-block">
+                <h4>Impact & Technical Tradeoffs</h4>
+                <p class="highlight-metric">
+                  Eliminated gear backlash and motor mass, achieving clean grip actuation with zero mechanical gear-train failure points.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-media-column">
+              <div class="media-placeholder">
+                <div class="media-dummy">
+                  <span>[ Gripper CAD / Prototype Image ]</span>
+                  <small>Replace with assets/khanjur_gripper.jpg</small>
+                </div>
+              </div>
+              <div class="specs-box">
+                <h5>Key Specifications</h5>
+                <dl>
+                  <dt>Actuator:</dt><dd>Resistive Joule-Heated Nitinol SMA</dd>
+                  <dt>Controller:</dt><dd>ESP32 Dual-Core (Wi-Fi AP / Web Server)</dd>
+                  <dt>Switching:</dt><dd>Logic-Level N-Channel MOSFET (PWM controlled)</dd>
+                  <dt>Control Latency:</dt><dd>&lt;50ms over localized 802.11 b/g/n</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: SECURITY BUGGY (UNDAUNTED TECH ASSESSMENT) -->
+        <article class="project-panel" role="tabpanel" id="panel-rover" aria-labelledby="tab-rover">
+          <div class="project-header">
+            <div>
+              <span class="badge">Systems Architecture & Mobility</span>
+              <h3 class="project-title">6-Wheeled Rocker-Bogie Autonomous Security Rover</h3>
+              <p class="project-role-tag">Design Study & Suspension Mechanism Architecture &bull; June 2026</p>
+            </div>
+            <div class="tech-pills">
+              <span>Rocker-Bogie Dynamics</span>
+              <span>DFM / CNC / Sheet Metal</span>
+              <span>Roboteq BLDC</span>
+              <span>Bioenno LiFePO4</span>
+              <span>Thermal & IP65 Analysis</span>
+            </div>
+          </div>
+
+          <div class="project-body-grid">
+            <div class="project-text">
+              <div class="detail-block">
+                <h4>The Engineering Challenge</h4>
+                <p>
+                  Architect a rugged, compact outdoor security robot capable of climbing standard 6-inch curbs, carrying a 15–30 lb surveillance and siren payload, and maintaining 9+ hours of outdoor uptime while remaining manufacturable in an 8-hour shift.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <h4>Architecture & Design Execution</h4>
+                <ul>
+                  <li><strong>Suspension Design:</strong> Formulated a passive 6-wheeled rocker-bogie mechanism with differential bar linkage to ensure all wheels maintain ground contact over extreme obstacles without failure-prone springs or dampers.</li>
+                  <li><strong>Drivetrain & Power:</strong> Matched geared hub BLDC motors driven by Roboteq controllers, powered by a 24V LiFePO4 battery pack selected for chemical and thermal safety across outdoor temperature extremes (-10&deg;C to 45&deg;C).</li>
+                  <li><strong>Environmental Protection:</strong> Specified IP65 rated main enclosure housings with dedicated rotary shaft seals at moving pivot joints and autonomous Roboteq docking pads.</li>
+                  <li><strong>Manufacturing Schedule:</strong> Developed complete V0–Field Pilot milestone schedule balancing prototype sheet metal turning (Xometry) with production-ready tooling (Fictiv).</li>
+                </ul>
+              </div>
+
+              <div class="detail-block">
+                <h4>Impact & Technical Tradeoffs</h4>
+                <p class="highlight-metric">
+                  Achieved verified geometric clearance for 6-inch obstacles while preserving an under-$5,000 production BOM target.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-media-column">
+              <div class="media-placeholder">
+                <div class="media-dummy">
+                  <span>[ Rocker-Bogie Kinetic Diagram / CAD ]</span>
+                  <small>Replace with assets/rocker_bogie_sketch.jpg</small>
+                </div>
+              </div>
+              <div class="specs-box">
+                <h5>Architecture Parameters</h5>
+                <dl>
+                  <dt>Obstacle Clearance:</dt><dd>6-inch roadside curbs</dd>
+                  <dt>Mobility Type:</dt><dd>Passive Rocker-Bogie with Diff Bar</dd>
+                  <dt>Payload Weight:</dt><dd>15 – 30 lbs</dd>
+                  <dt>Chassis Tube:</dt><dd>6061-T6 Aluminum / ABS Body Shell</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: XPRIZE DRONE PAYLOAD -->
+        <article class="project-panel" role="tabpanel" id="panel-drones" aria-labelledby="tab-drones">
+          <div class="project-header">
+            <div>
+              <span class="badge">Mechanical & Fluid Systems</span>
+              <h3 class="project-title">CO2-Pressurized Fire-Suppression Drone Payload</h3>
+              <p class="project-role-tag">Undergraduate Research Assistant &bull; Better Place Drones XPrize Team</p>
+            </div>
+            <div class="tech-pills">
+              <span>SolidWorks</span>
+              <span>Fluid Systems / Pneumatics</span>
+              <span>Rapid Prototyping</span>
+              <span>FMEA</span>
+            </div>
+          </div>
+
+          <div class="project-body-grid">
+            <div class="project-text">
+              <div class="detail-block">
+                <h4>The Engineering Challenge</h4>
+                <p>
+                  Wildfire fighting drones require immediate payload suppression discharge without the weight penalties and latency of heavy electric pumps. The system had to function reliably under high thermal and vibrational loads.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <h4>Architecture & Design Execution</h4>
+                <ul>
+                  <li><strong>Blowdown Pressurization:</strong> Engineered a CO2-driven blowdown delivery mechanism that rapidly pressurizes a custom water tank to disperse suppressant instantaneously upon release.</li>
+                  <li><strong>Weight & Payload Optimization:</strong> Modeled high-pressure routing in SolidWorks, eliminating unnecessary structural mass to maximize flight endurance.</li>
+                  <li><strong>Cross-Team Coordination:</strong> Collaborated across 5 subteams (airframe, avionics, telemetry, payload, recovery) to advance the platform from CAD to physical proof-of-concept testing.</li>
+                </ul>
+              </div>
+
+              <div class="detail-block">
+                <h4>Impact & Results</h4>
+                <p class="highlight-metric">
+                  Qualified as a Top-30 finalist out of 300 international engineering teams competing in the XPrize challenge.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-media-column">
+              <div class="media-placeholder">
+                <div class="media-dummy">
+                  <span>[ Drone Payload Assembly CAD ]</span>
+                  <small>Replace with assets/xprize_payload.jpg</small>
+                </div>
+              </div>
+              <div class="specs-box">
+                <h5>Engineering Metrics</h5>
+                <dl>
+                  <dt>Competition:</dt><dd>XPRIZE Wildfire Semi-Finalist (Top 30/300)</dd>
+                  <dt>Pressurization:</dt><dd>Regulated CO2 canister blowdown</dd>
+                  <dt>Subteams Integrated:</dt><dd>5 functional engineering divisions</dd>
+                  <dt>Tooling:</dt><dd>SolidWorks, FEA analysis, FDM additive</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: VISION INSPECTION -->
+        <article class="project-panel" role="tabpanel" id="panel-vision" aria-labelledby="tab-vision">
+          <div class="project-header">
+            <div>
+              <span class="badge">Computer Vision & Machine Learning</span>
+              <h3 class="project-title">Deep Learning Concrete Defect Segmentation</h3>
+              <p class="project-role-tag">Computer Vision Project &bull; Aug 2025 – Dec 2025</p>
+            </div>
+            <div class="tech-pills">
+              <span>TensorFlow</span>
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>VGG16 Transfer Learning</span>
+              <span>PCA & K-Means</span>
+            </div>
+          </div>
+
+          <div class="project-body-grid">
+            <div class="project-text">
+              <div class="detail-block">
+                <h4>The Engineering Challenge</h4>
+                <p>
+                  Manual visual structural health inspection of concrete infrastructure is slow, dangerous, and subjective. The goal was to build an automated, computationally lightweight pipeline to classify hairline vs. deep concrete cracks with high recall.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <h4>Architecture & Pipeline Execution</h4>
+                <ul>
+                  <li><strong>Transfer Learning:</strong> Leveraged a pre-trained VGG16 CNN feature extractor fine-tuned on a 2,000-image dataset of surface cracking, achieving 99.83% test classification accuracy.</li>
+                  <li><strong>Dimensionality Reduction:</strong> Implemented Principal Component Analysis (PCA) to compress high-dimensional feature tensors, capturing 95% of data variance within 104 components—reducing input dimensionality by 80%.</li>
+                  <li><strong>Unsupervised Diagnostics:</strong> Utilized K-Means clustering to automatically group classified defects into 3 distinct morphological severities (hairline, thick, jagged) with 1.00 precision/recall across categories.</li>
+                </ul>
+              </div>
+
+              <div class="detail-block">
+                <h4>Impact & Results</h4>
+                <p class="highlight-metric">
+                  Validated sub-millisecond edge defect inference, enabling future integration onto autonomous inspection rovers or drone payloads.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-media-column">
+              <div class="media-placeholder">
+                <div class="media-dummy">
+                  <span>[ Crack Segmentation / PCA Clusters ]</span>
+                  <small>Replace with assets/vision_inspection.jpg</small>
+                </div>
+              </div>
+              <div class="specs-box">
+                <h5>Pipeline Metrics</h5>
+                <dl>
+                  <dt>Model Accuracy:</dt><dd>99.83% on 2,000 structural samples</dd>
+                  <dt>Dimensionality:</dt><dd>80% reduction via PCA (104 components)</dd>
+                  <dt>Clustering:</dt><dd>K-Means (3 defect classes, 1.00 F1 score)</dd>
+                  <dt>Stack:</dt><dd>Python, OpenCV, TensorFlow, Scikit-Learn</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Technical Skills Breakdown -->
+    <section class="skills-section">
+      <h2 class="section-title">Technical Capabilities</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Hardware & Mechatronics</h3>
+          <p>ESP32, Arduino, embedded C/C++, PWM control, MOSFET switching circuits, sensor integration (I2C/SPI/UART), wiring & soldering, 3D printing, rapid prototyping.</p>
+        </div>
+        <div class="skill-category">
+          <h3>Mechanical Engineering</h3>
+          <p>SolidWorks, AutoCAD, Bluebeam Revu, geometric dimensioning & tolerancing (GD&T), FMEA, QFD, DFM (CNC / sheet metal), structural mechanics.</p>
+        </div>
+        <div class="skill-category">
+          <h3>Software & Autonomy</h3>
+          <p>Python, C/C++, MATLAB, OpenCV, TensorFlow, Scikit-learn, Git/GitHub, ROS 2 (foundational/in-training), Linux.</p>
         </div>
       </div>
     </section>
 
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <p>Stephen Jones &middot; Atlanta, GA &middot; <span id="yr"></span></p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2026 Stephen Jones. Built with clean HTML/CSS and hosted on GitHub Pages.</p>
+        <p class="footer-sub">Atlanta, GA &bull; <a href="mailto:stephen04317@gmail.com">stephen04317@gmail.com</a></p>
+      </div>
+    </footer>
+  </div>
 
   <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+    function switchTab(projectId) {
+      // Deactivate all tab buttons
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      tabButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
 
+      // Hide all panels
+      const panels = document.querySelectorAll('.project-panel');
+      panels.forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      // Activate target
+      const activeBtn = document.getElementById(`tab-${projectId}`);
+      const activePanel = document.getElementById(`panel-${projectId}`);
+
+      if (activeBtn && activePanel) {
+        activeBtn.classList.add('active');
+        activeBtn.setAttribute('aria-selected', 'true');
+        activePanel.classList.add('active');
+      }
+    }
+  </script>
 </body>
 </html>
