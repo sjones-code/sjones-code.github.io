@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stephen Jones — Robotics & Embedded Systems Engineer, Georgia Tech BSME + MSCS (Computational Perception & Robotics). Atlanta, GA.">
+  <title>Stephen Jones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header>
+    <div class="wrap">
+      <div class="header-inner">
+
+        <!-- Profile photo: replace src with your actual photo path -->
+        <div class="photo-placeholder" title="Profile photo placeholder — replace with your photo">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </div>
+
+        <div class="header-text">
+          <h1>Stephen Jones</h1>
+          <p class="location">Atlanta, GA</p>
+          <p class="degrees">
+            <strong>B.S. Mechanical Engineering</strong>, Georgia Tech, 2026<br>
+            <strong>M.S. Computer Science</strong> (Computational Perception &amp; Robotics), Georgia Tech OMSCS, in progress
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── THINGS I'M PROUD OF ─────────────────────────── -->
+    <section id="proud">
+      <div class="wrap">
+        <h2>Things I'm proud of</h2>
+        <ul class="proud-list">
+          <li>Division I swimmer at Georgia Tech — elected Team Captain, 2024–25 season</li>
+          <li>Built a wireless robotic gripper actuated by shape memory alloy wire, controlled from a phone browser via firmware I wrote on an ESP32</li>
+          <li>1st place out of five teams in a fully autonomous robot competition — designed, fabricated, and programmed end to end</li>
+          <li>Deep learning classifier for structural defect detection: 99.83% accuracy, 1.00 precision/recall across all categories</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── THE JOURNEY ─────────────────────────────────── -->
+    <section id="journey">
+      <div class="wrap">
+        <h2>The journey</h2>
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-content">
+              <div class="role">Lead Mechatronics Engineer</div>
+              <div class="org">Khanjur R&amp;D — Senior Capstone</div>
+              <div class="dates">Jan 2026 – May 2026</div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-content">
+              <div class="role">Research Assistant</div>
+              <div class="org">Better Place Drones – XPrize Team</div>
+              <div class="dates">Aug 2024 – Dec 2024</div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-content">
+              <div class="role">Fire Protection Engineer Intern</div>
+              <div class="org">Jensen-Hughes</div>
+              <div class="dates">May 2025 – Jul 2025</div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-content">
+              <div class="role">B.S. Mechanical Engineering → M.S. Computer Science (in progress)</div>
+              <div class="org">Georgia Institute of Technology</div>
+              <div class="dates">Aug 2022 – present</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ────────────────────────────────────── -->
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <div class="projects">
+
+          <div class="project">
+            <!-- Replace the div below with <img src="your-image.jpg" alt="Nitinol robotic gripper"> inside .project-img when you have a photo -->
+            <div class="project-img" role="img" aria-label="Nitinol robotic gripper — image placeholder">
+              Add a photo of the gripper here
+            </div>
+            <div>
+              <div class="project-title">Wireless Nitinol Robotic Gripper</div>
+              <div class="project-stack">ESP32 · C++ · PWM/MOSFET circuits · SolidWorks</div>
+              <p class="project-desc">Shape memory alloy wire replaces conventional motors: electrically heated Nitinol contracts and closes the gripper. An ESP32 hosts a local Wi-Fi web server so a phone browser can control it — no app, no internet required. Multiple hardware revisions before reliable, repeatable actuation.</p>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-img" role="img" aria-label="Deep learning structural inspection — image placeholder">
+              Add a results image or confusion matrix here
+            </div>
+            <div>
+              <div class="project-title">Deep Learning for Structural Inspection</div>
+              <div class="project-stack">Python · TensorFlow · VGG16 · PCA · K-Means</div>
+              <p class="project-desc">Transfer learning pipeline using a pre-trained VGG16 CNN to classify concrete defects. 99.83% accuracy on 2,000 images. PCA reduced input dimensionality by 80%; K-Means clustering sub-classified crack morphology with 1.00 precision/recall across all categories.</p>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-img" role="img" aria-label="ABS braking simulation — image placeholder">
+              Add a plot of wheel slip vs. time here
+            </div>
+            <div>
+              <div class="project-title">ABS Braking Simulation</div>
+              <div class="project-stack">MATLAB · Control Theory · Non-linear Dynamics</div>
+              <p class="project-desc">Non-linear quarter-car model with bang-bang feedback control optimizing wheel slip across dry, wet, and icy surfaces from 100 km/h. Validated stopping distance of 14.6m on dry pavement.</p>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-img" role="img" aria-label="Autonomous competition robot — image placeholder">
+              Add a photo of the robot here
+            </div>
+            <div>
+              <div class="project-title">Autonomous Competition Robot</div>
+              <div class="project-stack">SolidWorks · C++ · Arduino · FMEA · QFD</div>
+              <p class="project-desc">1st place out of five teams. Designed, fabricated, and programmed end to end across a three-person team — 30+ weekly hours of CAD, firmware, and physical fabrication alongside a full engineering course load.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ─────────────────────────────────────── -->
+    <section id="contact">
+      <div class="wrap">
+        <h2>Get in touch</h2>
+        <div class="contact-links">
+          <a href="https://github.com/sjones-code" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/sjones396" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:stephen04317@gmail.com">stephen04317@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Stephen Jones &middot; Atlanta, GA &middot; <span id="yr"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
