@@ -1,4 +1,361 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SMA Claw | Stephen Jones</title><meta name="description" content="Stephen Jones: robotics and mechatronics engineer. Georgia Tech BSME, OMSCS (Computational Perception and Robotics).">
-<link rel="stylesheet" href="style.css"></head><body><main><section class="panel"><h1>Project C.L.A.W.S.: a zero-power perching claw</h1><div class="callout"><b>Client:</b> Khanjur R&amp;D &bull; <b>Course:</b> ME 4723, Georgia Tech &bull; <b>Team:</b> 6 students &bull; <b>My role:</b> Project Manager and Mechanical Lead</div><p class="lead">Small drones fly about 30 minutes, mostly because hovering burns power. This claw lets a quadcopter grab a railing or pipe and hold on with 0.0 W, then release on command using shape memory alloy (SMA, Nitinol) actuators instead of heavy servos.</p><div class="chips"><span class="chip"><b>0.0 W</b> hold power</span><span class="chip"><b>8</b> SMA serpentines</span><span class="chip"><b>&lt;150 g</b> target</span><span class="chip"><b>20-60 mm</b> pipes</span></div><div class="callout warn">NDA: proprietary alloy specifications and client CAD are omitted. Numbers below are from our own bench tests.</div></section><section class="panel"><h2><img class="ico" src="assets/icons/cpu.svg" alt="">Actuation video</h2><figure><div class="fi"><video controls preload="metadata" poster="assets/opt/claw-poster.jpg" width="960" height="540"><source src="assets/Capstone/Claw_Actuation_Video_Completed.mp4" type="video/mp4"></video></div><figcaption>The black working prototype in action.</figcaption></figure></section><section class="panel"><h2>Two prototypes</h2><div class="figs"><figure><div class="fi"><img src="assets/opt/final-open-side.jpg" alt="Blue expo prototype: shows the interior at the expo, shown without Nitinol because of the NDA." loading="lazy"></div><figcaption>Blue expo prototype: shows the interior at the expo, shown without Nitinol because of the NDA.</figcaption></figure><figure><div class="fi"><img src="assets/opt/cap-closeup.jpg" alt="Close-up of the interior and ratchet hardware." loading="lazy"></div><figcaption>Close-up of the interior and ratchet hardware.</figcaption></figure><figure><div class="fi"><img src="assets/opt/cap-expo.jpg" alt="Presenting at the engineering expo." loading="lazy"></div><figcaption>Presenting at the engineering expo.</figcaption></figure></div><p>We built two designs. The <b>blue prototype</b> exposed the inside of the device for the expo and ran without Nitinol because of the NDA. The <b>black prototype</b> was the working version shown in the video.</p></section><section class="panel"><h2><img class="ico" src="assets/icons/waves.svg" alt="">Design evolution: four pivots</h2><ol class="steps"><li><b>Reverse-scissor linkage</b> won our weighted decision matrix (196 of 280, ranked 1st). Early prints showed multiple bearing pivots created parasitic friction, and the rigid jaws could not adapt to branches. We dropped it.</li><li><b>Prototype A: pre-stressed TPU claw.</b> A curled TPU band closes by default, so power loss means a safe grip. Kevlar tendons open it. It needed <b>5.8 N</b> to open one claw and held pipes <b>25-100 mm</b>. It failed above 100 mm, and above a 45 degree perch angle with more than <b>1.13 kg (11.1 N)</b> the payload rolled off.</li><li><b>Fix: rigid inverted V legs</b> with grip tape and protruding bolt talons moved overturning loads into a rigid frame.</li><li><b>Final: dual ratchet lever arm</b> on a 1/4 inch 6061 hex shaft, laser-cut acrylic ratchet gears, and holding pawls. SMA only releases the pawls, so holding costs no power.</li></ol><div class="figs"><figure><div class="fi"><img src="assets/opt/cap-pvc.jpg" alt="Early PVC bench prototype." loading="lazy"></div><figcaption>Early PVC bench prototype.</figcaption></figure><figure><div class="fi"><img src="assets/opt/cap-ratchet.jpg" alt="Interior ratchet mechanism." loading="lazy"></div><figcaption>Interior ratchet mechanism.</figcaption></figure></div></section><section class="panel"><h2>Test data: SMA behavior</h2><table><thead><tr><th>Current setting</th><th>Result</th></tr></thead><tbody><tr><th>1.5 A, 1.04 V</th><td>Under-actuation, incomplete displacement</td></tr><tr><th>2.0 A, 1.36 V (about 2.7 W)</th><td>Nominal: reliably lifted 170 g (1.76 N)</td></tr><tr><th>2.25 A, 1.59 V (about 3.6 W)</th><td>Failure: overheated, permanent deformation</td></tr></tbody></table><p>Power vs. actuation speed was linear, and 3.6 W was the upper limit before this geometry lost its shape memory. We sized power for the array: 12.0 A at 1.36 V is 16.32 W peak, 489.6 J per perch-and-takeoff cycle, 7,344 J per hour at 15 cycles, so an 8,000 J battery target.</p></section><section class="panel"><h2>Constraints I designed around</h2><ul><li><b>Strain limit:</b> SMA recovers only about 4%, but opening the claw needed a 5.08 cm tendon stroke, so the actuator needs large mechanical amplification (bow actuator or bell-crank).</li><li><b>Slow cooling</b> sets cycle time, so the claw defaults closed and SMA only releases.</li><li><b>Heat:</b> SMA runs near 90 C, so mounts use heat-resistant tape and vented housings.</li><li><b>Modularity:</b> a 1/4 inch grid of 4-40 screw holes lets pawl mounts, bearings, and SMA anchors move without new machining.</li></ul><div class="callout warn"><b>What failed:</b> in report-stage bench testing, 15 V at 7 A (over 100 W) still could not overcome sliding friction between the PETG lever arms and the aluminum shaft. The planned fix was flanged ball bearings or PTFE sleeves.</div></section><section class="panel"><h2>My contributions</h2><p>I led planning and sponsor communication, built the specification sheet and weighted decision matrix, designed the mounting, linkage, and actuation options for the morphological chart, and wrote and built Prototype A.</p></section></main><script src="main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SMA Claw | Stephen Jones</title>
+    <meta
+      name="description"
+      content="Stephen Jones: robotics and mechatronics engineer. Georgia Tech BSME, OMSCS (Computational Perception and Robotics)."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Stephen Jones | Robotics Engineer" />
+    <meta name="theme-color" content="#7ec8f0" />
+    <link rel="icon" href="assets/opt/headshot.jpeg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-bg="bird">
+    <main>
+      <section class="panel" data-bg="bird">
+        <h1>Project C.L.A.W.S.: a zero-power perching claw</h1>
+        <div class="facts">
+          <div><small>Client</small><b>Khanjur R&amp;D</b></div>
+          <div><small>Course</small><b>ME 4723, Georgia Tech</b></div>
+          <div><small>Team</small><b>6 students</b></div>
+          <div>
+            <small>My role</small><b>Project Manager and Mechanical Lead</b>
+          </div>
+        </div>
+        <p class="lead">
+          Small drones fly about 30 minutes, mostly because hovering burns
+          power. This claw lets a quadcopter grab a railing or pipe and hold on
+          with 0.0 W, then release on command using shape memory alloy (SMA,
+          Nitinol) actuators instead of heavy servos.
+        </p>
+        <div class="chips">
+          <span class="chip"><b>0.0 W</b> hold power</span
+          ><span class="chip"><b>8</b> SMA serpentines</span
+          ><span class="chip"><b>&lt;150 g</b> target</span
+          ><span class="chip"><b>20-60 mm</b> pipes</span>
+        </div>
+        <div class="callout warn">
+          NDA: proprietary alloy specifications and client CAD are omitted.
+          Numbers below are from our own bench tests.
+        </div>
+      </section>
+      <section class="panel" data-bg="bird">
+        <h2>
+          <svg class="ico" aria-hidden="true"><use href="#i-film" /></svg
+          >Actuation videos
+        </h2>
+        <div class="vids">
+          <figure>
+            <video
+              controls
+              preload="metadata"
+              poster="assets/opt/claw-poster.jpg"
+            >
+              <source
+                src="assets/Capstone/Claw_Actuation_Video_Completed.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <figcaption>The black working prototype in action.</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="metadata">
+              <source
+                src="assets/Capstone/finalprotomanualactuationvid.mp4#t=0.1"
+                type="video/mp4"
+              />
+            </video>
+            <figcaption>
+              Manual actuation of the final prototype: the ratchet locks the
+              grip with no power.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="panel" data-bg="bird">
+        <h2>Shape memory in action</h2>
+        <div class="gifbox">
+          <img
+            src="assets/Capstone/WTF_Paperclip_Nitinol.gif"
+            alt="A Nitinol paperclip returning to its shape"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <p>
+          Nitinol remembers a shape and snaps back to it when heated. That is
+          the effect the claw uses to release its ratchet.
+        </p>
+      </section>
+      <section class="panel" data-bg="bird">
+        <h2>Two prototypes</h2>
+        <div class="figs" data-car data-label="Capstone prototype photos">
+          <figure>
+            <div class="fi">
+              <img
+                decoding="async"
+                src="assets/web/cap-open.jpg"
+                alt="Blue expo prototype: shows the interior at the expo, shown without Nitinol because of the NDA."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              Blue expo prototype: shows the interior at the expo, shown without
+              Nitinol because of the NDA.
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="fi">
+              <img
+                decoding="async"
+                src="assets/web/cap-closeup.jpg"
+                alt="Close-up of the interior and ratchet hardware."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              Close-up of the interior and ratchet hardware.
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="fi">
+              <img
+                decoding="async"
+                src="assets/web/cap-expo.jpg"
+                alt="Presenting at the engineering expo."
+                loading="lazy"
+              />
+            </div>
+            <figcaption>Presenting at the engineering expo.</figcaption>
+          </figure>
+        </div>
+        <p>
+          We built two designs. The <b>blue prototype</b> exposed the inside of
+          the device for the expo and ran without Nitinol because of the NDA.
+          The <b>black prototype</b> was the working version shown in the video.
+        </p>
+      </section>
+      <section class="panel" data-bg="sky">
+        <h2>
+          <svg class="ico" aria-hidden="true"><use href="#i-box" /></svg
+          >Interactive assembly render
+        </h2>
+        <p>
+          Drag to rotate and scroll to zoom. This is the assembly with the lid,
+          Nitinol, electronics, and Kevlar cord removed, so the inside of the
+          mechanism is visible.
+        </p>
+        <div class="render">
+          <button class="gel blue" data-load>
+            Load the 3D render (about 9 MB)</button
+          ><iframe
+            title="3D render of the claw assembly with the top removed"
+            data-src="assets/Capstone/Project_Assembly_No_Top.html"
+            allowfullscreen
+            hidden
+          ></iframe>
+        </div>
+        <p>
+          <a
+            href="assets/Capstone/Project_Assembly_No_Top.html"
+            target="_blank"
+            rel="noopener"
+            >Open the render in its own tab</a
+          >
+        </p>
+      </section>
+      <section class="panel" data-bg="sky">
+        <h2>
+          <svg class="ico" aria-hidden="true"><use href="#i-waves" /></svg
+          >Design evolution: four pivots
+        </h2>
+        <ol class="steps">
+          <li>
+            <b>Reverse-scissor linkage</b> won our weighted decision matrix (196
+            of 280, ranked 1st). Early prints showed multiple bearing pivots
+            created parasitic friction, and the rigid jaws could not adapt to
+            branches. We dropped it.
+          </li>
+          <li>
+            <b>Prototype A: pre-stressed TPU claw.</b> A curled TPU band closes
+            by default, so power loss means a safe grip. Kevlar tendons open it.
+            It needed <b>5.8 N</b> to open one claw and held pipes
+            <b>25-100 mm</b>. It failed above 100 mm, and above a 45 degree
+            perch angle with more than <b>1.13 kg (11.1 N)</b> the payload
+            rolled off.
+          </li>
+          <li>
+            <b>Fix: rigid inverted V legs</b> with grip tape and protruding bolt
+            talons moved overturning loads into a rigid frame.
+          </li>
+          <li>
+            <b>Final: dual ratchet lever arm</b> on a 1/4 inch 6061 hex shaft,
+            laser-cut acrylic ratchet gears, and holding pawls. SMA only
+            releases the pawls, so holding costs no power.
+          </li>
+        </ol>
+        <div
+          class="figs"
+          data-car="small"
+          data-label="Early prototype iterations"
+        >
+          <figure>
+            <div class="fi">
+              <img
+                src="assets/Capstone/proto1wholeinterior.png"
+                alt="Whole interior of the first prototype"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>Whole interior of the first prototype</figcaption>
+          </figure>
+          <figure>
+            <div class="fi">
+              <img
+                src="assets/Capstone/proto1interiorratchetmechanism.png"
+                alt="Ratchet mechanism installed in the box"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>Ratchet mechanism installed in the box</figcaption>
+          </figure>
+          <figure>
+            <div class="fi">
+              <img
+                src="assets/Capstone/proto1justratchetmechanism.png"
+                alt="The ratchet mechanism on its own"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>The ratchet mechanism on its own</figcaption>
+          </figure>
+          <figure>
+            <div class="fi">
+              <img
+                src="assets/Capstone/proto1pvcforwards.png"
+                alt="PVC bench rig, front view"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>PVC bench rig, front view</figcaption>
+          </figure>
+          <figure>
+            <div class="fi">
+              <img
+                src="assets/Capstone/proto1pvcsideways.png"
+                alt="PVC bench rig, side view"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>PVC bench rig, side view</figcaption>
+          </figure>
+          <figure>
+            <div class="fi">
+              <img
+                src="assets/Capstone/proto1suspended.png"
+                alt="Rig suspended to test the hold"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>Rig suspended to test the hold</figcaption>
+          </figure>
+          <figure>
+            <div class="fi">
+              <img
+                src="assets/Capstone/proto1upsidedown.png"
+                alt="Rig upside down to test the hold"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>Rig upside down to test the hold</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="panel" data-bg="sky">
+        <h2>Test data: SMA behavior</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Current setting</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1.5 A, 1.04 V</th>
+              <td>Under-actuation, incomplete displacement</td>
+            </tr>
+            <tr>
+              <th>2.0 A, 1.36 V (about 2.7 W)</th>
+              <td>Nominal: reliably lifted 170 g (1.76 N)</td>
+            </tr>
+            <tr>
+              <th>2.25 A, 1.59 V (about 3.6 W)</th>
+              <td>Failure: overheated, permanent deformation</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Power vs. actuation speed was linear, and 3.6 W was the upper limit
+          before this geometry lost its shape memory. We sized power for the
+          array: 12.0 A at 1.36 V is 16.32 W peak, 489.6 J per perch-and-takeoff
+          cycle, 7,344 J per hour at 15 cycles, so an 8,000 J battery target.
+        </p>
+      </section>
+      <section class="panel" data-bg="bird">
+        <h2>Constraints I designed around</h2>
+        <ul>
+          <li>
+            <b>Strain limit:</b> SMA recovers only about 4%, but opening the
+            claw needed a 5.08 cm tendon stroke, so the actuator needs large
+            mechanical amplification (bow actuator or bell-crank).
+          </li>
+          <li>
+            <b>Slow cooling</b> sets cycle time, so the claw defaults closed and
+            SMA only releases.
+          </li>
+          <li>
+            <b>Heat:</b> SMA runs near 90 C, so mounts use heat-resistant tape
+            and vented housings.
+          </li>
+          <li>
+            <b>Modularity:</b> a 1/4 inch grid of 4-40 screw holes lets pawl
+            mounts, bearings, and SMA anchors move without new machining.
+          </li>
+        </ul>
+        <div class="callout warn">
+          <b>What failed:</b> in report-stage bench testing, 15 V at 7 A (over
+          100 W) still could not overcome sliding friction between the PETG
+          lever arms and the aluminum shaft. The planned fix was flanged ball
+          bearings or PTFE sleeves.
+        </div>
+      </section>
+      <section class="panel" data-bg="bird">
+        <h2>My contributions</h2>
+        <p>
+          I led planning and sponsor communication, built the specification
+          sheet and weighted decision matrix, designed the mounting, linkage,
+          and actuation options for the morphological chart, and wrote and built
+          Prototype A.
+        </p>
+      </section>
+      <section class="panel pager">
+        <a class="gel blue" href="index.html">Previous</a
+        ><a class="gel blue" href="index.html#projects">All projects</a
+        ><a class="gel blue" href="drone.html">Next</a>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
